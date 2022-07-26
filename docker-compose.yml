@@ -14,7 +14,7 @@ services:
         ports:
             - 80:80
         links:
-            - mongo
+            - mongo   
             - redis
         volumes:
             - ~/sharelatex_data:/var/lib/sharelatex
@@ -49,13 +49,11 @@ services:
             ## Set for SSL via nginx-proxy
             #VIRTUAL_HOST: 103.112.212.22
 
-            # SHARELATEX_SITE_URL: http://sharelatex.mydomain.com
-            # SHARELATEX_NAV_TITLE: Our ShareLaTeX Instance
+            SHARELATEX_SITE_URL: http://latex.adgstudios.co.za
+            SHARELATEX_NAV_TITLE: LaTeX @ ADGSTUDIOS
             # SHARELATEX_HEADER_IMAGE_URL: http://somewhere.com/mylogo.png
-            # SHARELATEX_ADMIN_EMAIL: support@it.com
-
-            # SHARELATEX_LEFT_FOOTER: '[{"text": "Powered by <a href=\"https://www.sharelatex.com\">ShareLaTeX</a> 2016"},{"text": "Another page I want to link to can be found <a href=\"here\">here</a>"} ]'
-            # SHARELATEX_RIGHT_FOOTER: '[{"text": "Hello I am on the Right"} ]'
+            SHARELATEX_ADMIN_EMAIL: adg@adgstudios.co.za            
+            SHARELATEX_RIGHT_FOOTER: '[{"text": "hosted with ❤️ by <a href=\"https://adgstudios.co.za">ADGSTUDIOS</a>"} ]'
 
             # SHARELATEX_EMAIL_FROM_ADDRESS: "team@sharelatex.com"
 
