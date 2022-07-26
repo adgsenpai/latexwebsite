@@ -1,0 +1,31 @@
+#!/bin/bash
+# Thin wrapper on old grunt tasks to ease migrating.
+
+set -e
+TASK="$1"
+shift 1
+
+cd /overleaf/services/web
+
+case "$TASK" in
+  user:create-admin)
+    node modules/server-ce-scripts/scripts/create-user --admin "$@"
+    ;;
+
+  user:delete)
+    node modules/server-ce-scripts/scripts/delete-user "$@"
+    ;;
+
+  check:mongo)
+    node modules/server-ce-scripts/scripts/check-mongodb
+    ;;
+
+  check:redis)
+    node modules/server-ce-scripts/scripts/check-redis
+    ;;
+
+  *)
+    echo "Unknown task $TASK"
+    exit 1
+    ;;
+esac
